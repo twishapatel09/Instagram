@@ -16,13 +16,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var posts = [PFObject]()
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        super.viewDidLoad()
-
+    
         // Do any additional setup after loading the view.
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let query = PFQuery(className: "Posts")
@@ -38,10 +38,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return posts.count
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
@@ -51,7 +47,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let post = posts[indexPath.row]
         let user = post["author"] as! PFUser
         cell.usernameLabel.text = user.username
-        cell.captionLabel.text = post["caption"] as? String
+        cell.captionLabel.text = post["caption"] as! String
         
         let imageFile = post["image"] as! PFFileObject
         let urlString = imageFile.url!
@@ -59,8 +55,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.photoView.af_setImage(withURL: url)
         
         return cell
-        }
+        
     }
+
+   
+
+    
     
     
     
@@ -75,4 +75,4 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     */
 
-
+}
