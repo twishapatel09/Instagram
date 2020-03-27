@@ -118,7 +118,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else if indexPath.row <= comments.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
             let comment = comments[indexPath.row - 1]
-            cell.commentLabel.text = comment["text"] as? String
+            cell.commentLabel.text = comment["text"] as! String
             let user = comment["author"] as! PFUser
             cell.nameLabel.text = user.username
             
@@ -159,16 +159,25 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     @IBAction func onLogoutButton(_ sender: Any) {
-        PFUser.logOut()
         
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
-        
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        
-        delegate.window?.rootViewController = loginViewController
-    }
-    
+        PFUser.logOutInBackground(block:
+            {
+                (error) in
+                
+                if let error = error{
+                    print(error.localizedDescription)
+                }
+                
+                else{
+                    print("Successful logout")
+                    
+                    let main = UIStoryboard(name: "Main", bundle: nil)
+                    let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+                    let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+                    sceneDelegate.window?.rootViewController = loginViewController
+                    
+            }
+    })
 
     /*
     // MARK: - Navigation
@@ -180,4 +189,5 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     */
 
+    }
 }
