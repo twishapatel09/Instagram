@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="398" id="UH5-FE-SF5" customClass="PostCell" customModule="Instagram" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="398" id="UH5-FE-SF5" customClass="PostCell" customModule="Instagram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="398"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UH5-FE-SF5" id="7i5-0t-cAf">
@@ -100,13 +100,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Twisha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBQ-Xu-lry">
-                                            <rect key="frame" x="8" y="368" width="56.5" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <rect key="frame" x="16" y="368" width="61.5" height="22"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment on a picture" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naY-uC-2y4">
-                                            <rect key="frame" x="72.5" y="368" width="333.5" height="21.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption on a picture" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naY-uC-2y4">
+                                            <rect key="frame" x="85.5" y="368" width="320.5" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -116,7 +116,7 @@
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="naY-uC-2y4" secondAttribute="bottom" constant="8" id="1o1-WC-etU"/>
                                         <constraint firstAttribute="trailing" secondItem="bST-kW-ma5" secondAttribute="trailing" constant="8" id="9Da-BA-VUF"/>
                                         <constraint firstItem="naY-uC-2y4" firstAttribute="leading" secondItem="kBQ-Xu-lry" secondAttribute="trailing" constant="8" id="MaW-H0-uEP"/>
-                                        <constraint firstItem="kBQ-Xu-lry" firstAttribute="leading" secondItem="7i5-0t-cAf" secondAttribute="leading" constant="8" id="OLb-ln-3er"/>
+                                        <constraint firstItem="kBQ-Xu-lry" firstAttribute="leading" secondItem="7i5-0t-cAf" secondAttribute="leading" constant="16" id="OLb-ln-3er"/>
                                         <constraint firstItem="naY-uC-2y4" firstAttribute="top" secondItem="bST-kW-ma5" secondAttribute="bottom" constant="8" id="Vg7-gP-rIq"/>
                                         <constraint firstItem="bST-kW-ma5" firstAttribute="leading" secondItem="7i5-0t-cAf" secondAttribute="leading" constant="8" id="W19-WA-vrD"/>
                                         <constraint firstAttribute="trailing" secondItem="naY-uC-2y4" secondAttribute="trailing" constant="8" id="dFN-Ay-fGn"/>
@@ -131,9 +131,49 @@
                                     <outlet property="usernameLabel" destination="kBQ-Xu-lry" id="7Zd-tu-PpS"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="AZo-RA-qet" customClass="CommentCell" customModule="Instagram" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="426" width="414" height="38"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AZo-RA-qet" id="kym-gf-oys">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twisha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKm-XR-ZRg">
+                                            <rect key="frame" x="16" y="8" width="61.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfm-g1-i89">
+                                            <rect key="frame" x="85.5" y="8" width="147.5" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="tKm-XR-ZRg" firstAttribute="top" secondItem="kym-gf-oys" secondAttribute="top" constant="8" id="6JI-C2-Rwf"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wfm-g1-i89" secondAttribute="trailing" constant="8" id="8HP-kI-580"/>
+                                        <constraint firstItem="Wfm-g1-i89" firstAttribute="top" secondItem="kym-gf-oys" secondAttribute="top" constant="8" id="9Ik-9g-EWp"/>
+                                        <constraint firstItem="tKm-XR-ZRg" firstAttribute="leading" secondItem="kym-gf-oys" secondAttribute="leading" constant="16" id="Sde-sW-9vY"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tKm-XR-ZRg" secondAttribute="bottom" constant="8" id="cfu-kB-LfL"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Wfm-g1-i89" secondAttribute="bottom" constant="8" id="eAR-ap-GoT"/>
+                                        <constraint firstItem="Wfm-g1-i89" firstAttribute="leading" secondItem="tKm-XR-ZRg" secondAttribute="trailing" constant="8" id="g2a-YC-daQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentLabel" destination="Wfm-g1-i89" id="sHr-oK-Pvm"/>
+                                    <outlet property="nameLabel" destination="tKm-XR-ZRg" id="FgU-Nn-fnn"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="R2p-jq-e8W">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="t36-yX-GCq">
+                            <connections>
+                                <action selector="onLogoutButton:" destination="QgJ-bP-Fu8" id="WRa-EM-l2Q"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="BlN-Lm-18Z">
                             <connections>
                                 <segue destination="6Ex-xK-lGY" kind="presentation" id="TCI-d2-uZe"/>
@@ -201,7 +241,7 @@
         <!--Navigation Controller-->
         <scene sceneID="uZF-jj-su1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZyR-8D-yfn" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ZyR-8D-yfn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Ix-Cu-vch">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
