@@ -68,7 +68,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
-            let comment = comments[indexPath.row - 1]
+            let comment = comments[indexPath.section - 1]
             cell.commentLabel.text = comment["text"] as? String
             let user = comment["author"] as! PFUser
             cell.nameLabel.text = user.username
