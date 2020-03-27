@@ -166,6 +166,28 @@
                                     <outlet property="nameLabel" destination="tKm-XR-ZRg" id="FgU-Nn-fnn"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddCommentCell" id="UeN-k6-TzX">
+                                <rect key="frame" x="0.0" y="464" width="414" height="38"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UeN-k6-TzX" id="Rxl-GK-r6v">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFc-EA-b0N">
+                                            <rect key="frame" x="16" y="8" width="390" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gFc-EA-b0N" firstAttribute="top" secondItem="Rxl-GK-r6v" secondAttribute="top" constant="8" id="DrV-gu-7H9"/>
+                                        <constraint firstAttribute="bottom" secondItem="gFc-EA-b0N" secondAttribute="bottom" constant="8" id="GuZ-lI-fvZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="gFc-EA-b0N" secondAttribute="trailing" constant="8" id="aTG-C4-Efk"/>
+                                        <constraint firstItem="gFc-EA-b0N" firstAttribute="leading" secondItem="Rxl-GK-r6v" secondAttribute="leading" constant="16" id="sCA-lb-k0e"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="R2p-jq-e8W">
